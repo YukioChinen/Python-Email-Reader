@@ -1,0 +1,6 @@
+python-dotenv
+imbox
+transformers
+torch
+google-generativeai
+
