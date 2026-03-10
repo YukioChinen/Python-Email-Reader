@@ -1,36 +1,47 @@
 # Python Email Reader
 ## Descrição
-Uma aplicação Python para ler e processar emails de servidores IMAP.
+Uma aplicação Python para ler e processar emails de servidores IMAP e classificar baseado no domínio do email do remetente.
 
 ## Funcionalidades
 - Conectar a contas de email via IMAP
-- Ler emails da caixa de entrada
-- Analisar conteúdo de emails e anexos
-- Interface de linha de comando simples
+- Separar o domínio do remetente
+- Criar um marcador baseado no domínio
+- Salvar o email correspondente ao domínio
 
 ## Requisitos
 - Python 3.7+
-- imaplib
-- email
-- ssl
+- python-dotenv
+- imbox
 
 ## Instalação
 ```bash
-git clone https://github.com/seunome/Python-Email-Reader.git
+git clone https://github.com/seu-usuario/Python-Email-Reader.git
 cd Python-Email-Reader
 pip install -r requirements.txt
 ```
 
 ## Uso
-```python
-from email_reader import EmailReader
+```bash
+python main.py
+```
 
-reader = EmailReader(email, password, imap_server)
-emails = reader.fetch_emails()
+Ou importar a função diretamente:
+```python
+from src.email_reader import read_emails
+
+read_emails()
 ```
 
 ## Configuração
-Atualize suas credenciais de email em `config.py` ou passe-as como argumentos.
+Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
+
+```env
+EMAIL_USER=seu_email@gmail.com
+EMAIL_PASSWORD=sua_senha_ou_app_password
+HOST=imap.gmail.com
+```
+
+**Nota:** Para Gmail, recomenda-se usar [App Passwords](https://support.google.com/accounts/answer/185833) ao invés da senha principal.
 
 ## Autor
 Enzo Yukio Chinen
