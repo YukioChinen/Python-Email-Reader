@@ -56,7 +56,22 @@ Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
 EMAIL_USER=seu_email@gmail.com
 EMAIL_PASSWORD=sua_senha_ou_app_password
 HOST=imap.gmail.com
+TELEGRAM_TOKEN=seu_token_do_bot
+CHAT_ID=seu_chat_id
 ```
+
+### Como conseguir TELEGRAM_TOKEN
+1. No Telegram, procure por `@BotFather`.
+2. Envie o comando `/newbot` e siga as instruções para criar o bot.
+3. Ao final, o BotFather vai retornar um token no formato `123456789:ABC...`.
+4. Copie esse valor e use em `TELEGRAM_TOKEN`.
+
+### Como conseguir CHAT_ID
+1. Envie uma mensagem para o seu bot (por exemplo: `oi`).
+2. No navegador, abra:
+	`https://api.telegram.org/botSEU_TELEGRAM_TOKEN/getUpdates`
+3. No JSON retornado, procure por `chat` e depois por `id`.
+4. Use esse número em `CHAT_ID`.
 
 **Nota:** Para Gmail, recomenda-se usar [App Passwords](https://support.google.com/accounts/answer/185833) ao invés da senha principal.
 
