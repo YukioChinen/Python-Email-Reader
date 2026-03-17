@@ -9,6 +9,9 @@ email_password = os.getenv('EMAIL_PASSWORD')
 host = os.getenv('HOST')
 
 def read_emails():
+    category_count = {}
+    total = 0
+
     with Imbox(host, username=email_user, password=email_password) as imbox:
         unread_messages = imbox.messages(unread=True)
 
@@ -31,6 +34,11 @@ def read_emails():
 
             imbox.move(uid, category)
             imbox.mark_seen(uid)
+
+            category_count[category] = category_count.get(category, 0) + 1
+            total += 1
+
+    return category_count, total
 
 def ensure_folder_exists(imbox, folder_name):
     status, folders = imbox.connection.list()

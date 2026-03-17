@@ -8,6 +8,23 @@ Uma aplicação Python para ler e processar emails de servidores IMAP e classifi
 - Criar um marcador baseado no domínio
 - Salvar o email correspondente ao domínio
 
+## Versão 2
+### O que foi mudado
+- Adicionado um bot do Telegram.
+- O bot envia para o seu usuário o total de emails categorizados.
+- O bot também envia os marcadores que foram criados durante a categorização.
+
+### Exemplo de mensagem que chega
+```text
+📬 Emails organizados:
+
+blizzard: 2
+google: 9
+instagram: 5
+
+Total: 16
+```
+
 ## Requisitos
 - Python 3.7+
 - python-dotenv
